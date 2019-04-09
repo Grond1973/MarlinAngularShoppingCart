@@ -1,0 +1,14 @@
+<p>
+    <span>Items in cart: {{ getTotalItmsInCart() }}</span> | <a  (click)="viewCart()">View Cart</a> | <a (click)="checkout()">Checkout</a> | <span>{{cartMsg}}</span>
+  </p>
+<table class="simpleTable">
+  <tr *ngFor="let prod of products" class="simpleRow">
+    <td>{{ prod.Name}}</td> 
+    <td>{{ prod.Description }}</td>
+    <td>{{ prod.Price | currency }} </td>
+    <td><button (click)="addCartItem(prod)">Add To Cart</button></td>
+  </tr>
+</table>
+<p>
+    <span>Items in cart: {{ getTotalItmsInCart() }}</span> | <a  (click)="viewCart()">View Cart</a> | <a (click)="checkout()">Checkout</a> | <span>{{cartMsg}}</span>
+  </p>

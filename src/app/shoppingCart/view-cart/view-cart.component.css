@@ -1,0 +1,28 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.simpleRow
+{
+    height: 35px;
+    text-align: center;
+    background-color: #DEDEDE;
+}
+
+/*
+.simpleRow:hover 
+{
+    background-color: #A1A1A1;
+    font-weight:bold;
+}
+*/
+.simpleTable
+{
+    border: 1px solid #000000;
+    
+}
+
+.tdMinWidth
+{
+    min-width: 85px;
+}

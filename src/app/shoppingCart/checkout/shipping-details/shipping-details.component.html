@@ -1,0 +1,46 @@
+<h1>Checkout - Shipping Information</h1>
+<span>Cart Total: {{ shopCart.getCartTotal() | currency }}</span> | <span>Total Items in cart: {{ shopCart.getTotalItemsInCart() }}</span> | <a (click)="keepShopping()">Keep Shopping</a>
+<br />
+<br />
+  <div id="frmMainForm">
+    <form #payInfoform="ngForm" name="frmPaymentDetails" (submit)="onSubmit(form)">
+      <label >First Name: </label>
+      <br />
+      <input type="text" [(ngModel)]="shipAddress.FirstName" name="txtFirstName" class="mediumTextboxWidth">
+      <br />
+      <br />
+      <label >Last Name: </label>
+      <br />
+      <input type="text" [(ngModel)]="shipAddress.LastName" name="txtLastName" class="mediumTextboxWidth">
+      <br />
+      <br />
+      <label >Address: </label>
+      <br />
+      <input type="text" [(ngModel)]="shipAddress.StreetAddress" name="txtAddress" class="mediumTextboxWidth">
+      <br />
+      <br />
+      <label >City: </label>
+      <br />
+      <input type="text" [(ngModel)]="shipAddress.City" name="txtCity" class="mediumTextboxWidth">
+      <br />
+      <br />
+      <label >State: </label>
+      <br />
+      <select name="slctState" id="slctState" [(ngModel)]="shipAddress.State">
+        <option>SELECT STATE</option>
+        <option *ngFor="let state of states" [value]="state.Id">{{state.Name}}</option>
+      </select>
+      <br />
+      <br />
+      <label >Zip Code: </label>
+      <br />
+      <input type="text" [(ngModel)]="shipAddress.ZipCode" name="txtZipCode" class="mediumTextboxWidth">
+      <br />
+      <br />
+      <button type=submit>Continue</button> &nbsp;&nbsp;
+      <button type=reset>Reset</button>
+      <br />
+    </form>
+  </div>
+<br />
+<span>Cart Total: {{ shopCart.getCartTotal() | currency }}</span> | <span>Total Items in cart: {{ shopCart.getTotalItemsInCart() }}</span> | <a (click)="keepShopping()">Keep Shopping</a>

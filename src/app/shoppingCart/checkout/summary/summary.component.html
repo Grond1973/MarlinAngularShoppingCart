@@ -1,0 +1,46 @@
+<h1>Checkout - Summary</h1>
+<br />
+<br />
+<table>
+  <tr>
+    <th>BILL TO: </th>
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th>SHIP TO: </th>
+  </tr>
+  <tr>
+    <td>
+      {{shopCart.cartCustomer.BillingAddress.FirstName }} {{ shopCart.cartCustomer.BillingAddress.LastName }}
+      <br />
+      {{ shopCart.cartCustomer.BillingAddress.StreetAddress }}
+      <br />
+      {{ shopCart.cartCustomer.BillingAddress.City }}
+      <br />
+      {{ shopCart.cartCustomer.BillingAddress.ZipCode }}
+    </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>
+      {{shopCart.cartCustomer.ShippingAddress.FirstName }} {{ shopCart.cartCustomer.ShippingAddress.LastName }}
+      <br />
+      {{ shopCart.cartCustomer.ShippingAddress.StreetAddress }}
+      <br />
+      {{ shopCart.cartCustomer.ShippingAddress.City }}
+      <br />
+      {{ shopCart.cartCustomer.ShippingAddress.ZipCode }}
+    </td>
+  </tr>
+</table>
+<P>
+  <span>Total Purchase Amount: {{ shopCart.getCartTotal() | currency }}</span>
+  <br />
+  <br />
+  <span>Payment Method: {{shopCart.cartCustomer.creditCard.Name}}</span>
+</P>
+<br />
+<br />
+  <span>Items purchased:</span>
+  <ul>
+    <li *ngFor="let itm of shopCart.items">
+      <span>{{itm.Name}} Qty: {{ itm.Count }}  Price:{{itm.Price | currency}}</span>
+    </li>
+  </ul>
+

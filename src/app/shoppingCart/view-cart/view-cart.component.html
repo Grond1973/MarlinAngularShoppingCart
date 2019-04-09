@@ -1,0 +1,16 @@
+<h1>View Cart</h1>
+<p>
+  <span>Cart Total: {{ getCartTotal() | currency }}</span> | <a (click)="viewProducts()">Keep Shopping</a> | <a (click)="checkout()">Checkout</a>
+</p>
+<table class="simpleTable">
+  <tr *ngFor="let itm of cartItems" class="simpleRow">
+    <td><div class="tdMinWidth">{{ itm.Name }}</div></td>
+    <td><div class="tdMinWidth">Quantity: {{ itm.Count }}</div></td>
+    <td><div class="tdMinWidth"><button (click)="incQty(itm)">+</button></div></td>
+    <td><div class="tdMinWidth"><button (click)="decQty(itm)">-</button></div></td>
+    <td><div class="tdMinWidth"><button (click)="deleteCartItem(itm)">X</button></div></td>
+  </tr>
+</table>
+<p>
+    <span>Cart Total: {{ getCartTotal() | currency }}</span> | <a (click)="viewProducts()">Keep Shopping</a> | <a (click)="checkout()">Checkout</a>
+  </p>
